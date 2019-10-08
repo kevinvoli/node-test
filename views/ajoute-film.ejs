@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../public/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <% include ./partials/header%>
+        <hr>
+        <h1>ajouter un nouveaux filme ici </h1>
+        <div class="contenue">
+                <% var i= 1 %>
+                <% for (film of list ){%>
+                    <a href="/movie/film<%=i%> " ><div class="film">film1</div></a>
+                <% i+=1 }%>
+        </div>
+        <form action="/movies/ajouter" method="post" enctype="multipart/form-data">
+            <label for="titre">ajoute film</label>
+            <input type="text" name="titre" id="titre"><br><p></p>
+            <label for="anne">ajoute anner</label>
+            <input type="number" name="anne" id="anne"><br><p></p>
+            <button type="submit">ajouter</button>
+
+        </form>
+       
+        <hr>
+
+    
+<hr>
+        <% include ./partials/footer%>
+
+        <script src="../public/index.js"></script>
+      
+    </body>
+</html>

@@ -1,0 +1,68 @@
+body{
+    font-family: Consolas,Monaco,"Andale Mono",monospace,sans-serif;
+}
+.central{
+    min-height: 250px;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: darkslategray;
+    align-items: center;
+    align-content: center;
+    color: aliceblue;
+    justify-content: center;
+}
+
+.logo{
+    margin: 20px;
+    color: inherit;  
+    width: 30%;       
+}
+.navigue{
+    width: 65%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.navigue a{
+    margin-right: 50px;
+}
+a{
+    color: inherit;
+}
+.film{
+    width: 300px;
+    height: 400px;
+    background-color: aqua;
+    margin: 10px;
+    text-align: center;
+}
+.contenue{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-flow: row wrap;
+}
+.Zoom{
+    transform: scale(1.1);
+    box-shadow: in
+}
+
+/* 
+Jeton d'accès en lecture à l'API (v4 auth)
+
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3OGZhMTM4YzI4NTY0NDc2YzAyODUyYjc1NjY1MjM5MSIsInN1YiI6IjVkOWM5ZWQ2YTEzNTMzMDAxZDhmMjA5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HjEpsDwqVuqtVMd2py7lop8Xb-CZg-xEwNR3RkX0fKI
+
+Exemple de requête API
+https://api.themoviedb.org/3/movie/550?api_key=78fa138c28564476c02852b756652391
+
+
+Clé de l'API (v3 auth)
+
+78fa138c28564476c02852b756652391  */

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../public/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <% include ./partials/header%>
+        <hr>
+        <h1>les recherche</h1>
+       <form action="/movie-search" method="post" enctype="multipart/form-data">
+            <input type="text" name="term" id="term" placeholder="titre du film">
+            <button type="submit">recherche</button>
+       </form>
+       
+        <hr>
+
+        <div class="contenue">
+            <% var i= 1 %>
+            <% for (film of list ){%>
+                <a href="/movie/film<%=i%> " ><div class="film">film1</div></a>
+            <% i+=1 }%>
+        </div>
+<hr>
+        <% include ./partials/footer%>
+
+        <script src="../public/index.js"></script>
+    </body>
+</html>
+
+
