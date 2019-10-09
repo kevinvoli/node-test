@@ -12,7 +12,9 @@ app.use('/public', express.static('public'))
 // MES VARIABLE GLOBALE A AFFICHER SUR MA PAGE
 const recherch=""
 const franchMovies=[]
-var urlencodedParser= bodyParser.urlencoded({extended:false})
+// var urlencodedParser= bodyParser.urlencoded({extended:false})
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 // FIN
 
@@ -32,27 +34,30 @@ res.render('movies',{list:franchMovies})
 
 
 app.get('/movie-search',(req,res)=>{
-    res.render('movie-search',{list:franchMovies})
+    res.render('movie-search',{resultar:franchMovies})
+})
+app.post('/movie-search',(req,res)=>{
+    let search= req.body
+    console.log(search.term)
+  
+    const query = ` https://api.themoviedb.org/3/search/movie?api_key=78fa138c28564476c02852b756652391&query=${search.term}`
+
+    axios.get(query).then((response)=>{
+        console.log(response.data.results)
+    res.render('movie-search',{ resultar: response.data.results})
+    })
+
+    
 })
 
 app.get('/movies/ajouter',(req,res)=>{
     res.render("ajoute-film",{list:franchMovies})
 })
-app.post('/movie-search',upload.fields(),(req,res)=>{
-  
-    if (!req.body) {
-        return res.sendStatus(500);
-    } else {
-       
-        console.log('formData: ', req.body)
-        const query = `https://api.themoviedb.org/3/search/movie?api_key=78fa138c28564476c02852b756652391&query=${req.body}`
-        axios.get(query).then((response)=>{
-            console.log("sdzdeff",response);
-        })
-    }
-    
 
-})
+
+
+
+
 
 app.post('/movies/ajouter',upload.fields([]),(req,res)=>{
     if (!req.body) {

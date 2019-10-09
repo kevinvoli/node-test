@@ -10,18 +10,25 @@
         <% include ./partials/header%>
         <hr>
         <h1>les recherche</h1>
-       <form action="/movie-search" method="post" enctype="multipart/form-data">
+       <form action="/movie-search" method="post">
             <input type="text" name="term" id="term" placeholder="titre du film">
-            <button type="submit">recherche</button>
        </form>
        
         <hr>
 
         <div class="contenue">
+            <%if(resultar){  %>
             <% var i= 1 %>
-            <% for (film of list ){%>
-                <a href="/movie/film<%=i%> " ><div class="film">film1</div></a>
+            <% for (film of resultar ){%>
+                <a href="/movie/film<%=i%> " >
+                    <div class="film">
+                        <div class="image">
+                     <img class="img" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2<%=film.poster_path%>" alt="" srcset="">
+                    </div>
+                    </div>
+                </a>
             <% i+=1 }%>
+            <% } %>
         </div>
 <hr>
         <% include ./partials/footer%>
