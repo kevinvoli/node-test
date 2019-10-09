@@ -8,6 +8,7 @@
     </head>
     <body>
         <% include ./partials/header%>
+        
         <hr>
         <h1>les recherche</h1>
        <form action="/movie-search" method="post">
@@ -20,7 +21,7 @@
             <%if(resultar){  %>
             <% var i= 1 %>
             <% for (film of resultar ){%>
-                <a href="/movie/film<%=i%> " >
+                <a href="/movie/film " >
                     <div class="film">
                         <div class="image">
                      <img class="img" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2<%=film.poster_path%>" alt="" srcset="">

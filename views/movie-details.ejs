@@ -9,12 +9,29 @@
     <body>
             <% include ./partials/header%>
         <hr>
-            <h1>ici vous verez biento les details le <%= film %></h1>
+            <h1>ici vous verez bientôt les details le </h1>
         <hr>
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odio numquam beatae, veritatis ab explicabo laborum, libero ut eaque quia vero vitae in repudiandae similique consequuntur repellat eos corporis? Deleniti!
+        <div class="details">
+            <div class="oui">
+            <div class="image-details">
+                <img class="img-details" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2<%=movie.poster_path%>" alt="" srcset="">
+            </div>
+            <div class="details-film">
+                <div style="height: 250px"><p>description: </p> <%=movie.overview%></div>
+                <p>
+                    <div class="plus">
+                        <p>
+                            <span>title: </span><%=movie.original_title%>
+                        </p> 
+                        <p>
+                            <span>views: </span><%=movie.vote_average%>
+                        </p>
+                    </div>
+                   
+                </p>
+            </div>
         </div>
-
+        </div>
         <% include ./partials/footer%>
         <script src="../public/index.js"></script>
     </body>

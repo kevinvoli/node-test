@@ -12,10 +12,21 @@
         <h1>express Movies : les site cinephiles</h1>
         <hr>
         <div class="contenue">
-                <% var i= 1 %>
-                <% for (film of list ){%>
-                    <a href="/movie/film<%=i%> " ><div class="film">film <%=i%> </div></a>
-                <% i+=1 }%>
+            <%if(resultar){  %>
+            <% var i= 0 %>
+            <% for (film of resultar ){%>
+                
+                    <div class="film">
+                        <div class="image">
+                    <img class="img" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2<%=film.poster_path%>" alt="" srcset="">
+                    </div>
+                    <div>
+                        <p class="title"> <%=film.title%></p>
+                       <button class="boutton"><a href="/movie/<%=i %>">plus info</a></button>
+                    </div>
+                    </div>
+            <% i+=1 }%>
+            <% } %>
         </div>
         <hr>
         <% include ./partials/footer%>
